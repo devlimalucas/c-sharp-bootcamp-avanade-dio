@@ -42,7 +42,7 @@ namespace ExemploExplorar.Models
                 _idade = value;
             }
         }
-        
+
         public void Apresentar()
         {
             Console.WriteLine($"Nome: {NomeCompleto}, Idade: {Idade}");
