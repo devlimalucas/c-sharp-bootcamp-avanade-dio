@@ -1,13 +1,11 @@
 ﻿using System.Runtime.Serialization;
 using ExemploExplorar.Models;
 
-Pessoa p1 = new();
-p1.Nome = "Lucas";
-p1.Sobrenome = "Lima";
+Pessoa p1 = new("Lucas", "Lima");
 
-Pessoa p2 = new();
-p2.Nome = "Leo";
-p2.Sobrenome = "Leo";
+Pessoa p2 = new("Leonardo", "Buta");
+
+Pessoa p3 = new();
 
 Curso cursoDeIngles = new();
 cursoDeIngles.Nome = "Inglês";
