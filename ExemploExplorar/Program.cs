@@ -1,16 +1,6 @@
-﻿using System.Runtime.Serialization;
-using ExemploExplorar.Models;
+﻿using ExemploExplorar.Models;
+using System.Globalization;
 
-Pessoa p1 = new("Lucas", "Lima");
+DateTime data = DateTime.Parse("12/10/2025 19:00");
 
-Pessoa p2 = new(nome: "Leonardo", sobrenome: "Buta");
-
-Pessoa p3 = new();
-
-Curso cursoDeIngles = new();
-cursoDeIngles.Nome = "Inglês";
-cursoDeIngles.Alunos = new List<Pessoa>();
-
-cursoDeIngles.AdicionarAluno(p1);
-cursoDeIngles.AdicionarAluno(p2);
-cursoDeIngles.ListarAlunos();
+Console.WriteLine(data);
