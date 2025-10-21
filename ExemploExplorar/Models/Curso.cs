@@ -30,11 +30,11 @@ namespace ExemploExplorar.Models
         {
             Console.WriteLine($"Alunos do curso de: {Nome}");
 
-            int count = 1;
+            int count = 0;
             
             foreach (Pessoa aluno in Alunos)
             {
-                Console.WriteLine($"Nº {count} - {aluno.NomeCompleto}");
+                Console.WriteLine($"Nº {count + 1} - {aluno.NomeCompleto}");
                 count++;
             }
         }
