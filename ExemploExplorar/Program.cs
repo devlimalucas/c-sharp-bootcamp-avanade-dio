@@ -1,5 +1,8 @@
 ﻿using ExemploExplorar.Models;
+using System.Globalization;
 
-decimal valorMonetario = 82.40M;
+CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("en-US");
+
+decimal valorMonetario = 1580.55M;
 
 Console.WriteLine($"{valorMonetario:C}");
