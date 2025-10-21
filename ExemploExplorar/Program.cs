@@ -3,7 +3,7 @@ using ExemploExplorar.Models;
 
 Pessoa p1 = new("Lucas", "Lima");
 
-Pessoa p2 = new("Leonardo", "Buta");
+Pessoa p2 = new(nome: "Leonardo", sobrenome: "Buta");
 
 Pessoa p3 = new();
 
