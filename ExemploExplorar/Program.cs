@@ -1,16 +1,17 @@
-﻿using System.Runtime.Serialization;
-using ExemploExplorar.Models;
+﻿using ExemploExplorar.Models;
 
-Pessoa p1 = new("Lucas", "Lima");
+string numero1 = "10";
+string numero2 = "20";
 
-Pessoa p2 = new(nome: "Leonardo", sobrenome: "Buta");
+int numeroInteiro1 = 10;
+int numeroInteiro2 = 20;
 
-Pessoa p3 = new();
+string resultado = numero1 + numero2;
 
-Curso cursoDeIngles = new();
-cursoDeIngles.Nome = "Inglês";
-cursoDeIngles.Alunos = new List<Pessoa>();
+int resultadoInteiros = numeroInteiro1 + numeroInteiro2;
 
-cursoDeIngles.AdicionarAluno(p1);
-cursoDeIngles.AdicionarAluno(p2);
-cursoDeIngles.ListarAlunos();
+Console.WriteLine("soma numeros " + resultado);
+
+Console.WriteLine("soma numeros inteiros " + resultadoInteiros);
+
+Console.WriteLine("Dois tipos " + numero1 + numeroInteiro2);
