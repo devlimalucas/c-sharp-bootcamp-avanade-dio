@@ -1,8 +1,16 @@
 ﻿using ExemploExplorar.Models;
 using System.Globalization;
 
-CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("en-US");
+CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("pt-BR");
 
 decimal valorMonetario = 1580.55M;
 
-Console.WriteLine(valorMonetario.ToString("C3", CultureInfo.CreateSpecificCulture("pt-BR")));
+double porcentagem = .3421;
+
+int numero = 123456;
+
+Console.WriteLine(valorMonetario.ToString("N2"));
+
+Console.WriteLine(porcentagem.ToString("P"));
+
+Console.WriteLine(numero.ToString("##-##-##"));
