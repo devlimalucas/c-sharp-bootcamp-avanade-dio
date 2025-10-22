@@ -1,8 +1,7 @@
 ﻿using ExemploExplorar.Models;
 using System.Globalization;
 
-Pessoa p1 = new("Lucas", "Lima");
+int numero = 15;
+bool ehPar = numero % 2 == 0;
 
-(string nome, string sobrenome) = p1;
-
-Console.WriteLine($"{nome} {sobrenome}");
+Console.WriteLine($"O número é " + (ehPar ? "par" : "ímpar"));
