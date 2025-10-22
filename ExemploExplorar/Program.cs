@@ -16,6 +16,30 @@ try
     {
         Console.WriteLine($"Chave: {item.Key}, Valor: {item.Value}");
     }
+
+    Console.WriteLine("-----------");
+
+    estados.Remove("MG");
+    estados["SP"] = "São Paulo - valor alterado";
+
+    foreach (var item in estados)
+    {
+        Console.WriteLine($"Chave: {item.Key}, Valor: {item.Value}");
+    }
+
+    Console.WriteLine("-----------");
+
+    string chave = "BA";
+
+    if (estados.ContainsKey(chave))
+    {
+        Console.WriteLine($"O valor existente: {chave}");
+    }
+    else
+    {
+        Console.WriteLine($"Valor não existente. É seguro adicionar a chave: {chave}");
+    }
+
 }
 catch (Exception ex)
 {
