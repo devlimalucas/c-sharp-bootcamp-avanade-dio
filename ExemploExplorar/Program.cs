@@ -1,13 +1,21 @@
 ﻿using ExemploExplorar.Models;
 using System.Globalization;
 
-(int, string, string, decimal) tupla = (1, "Lucas", "Lima", 10.5M);
+LeituraArquivo arquivo = new LeituraArquivo();
 
-ValueTuple<int, string, string, decimal> outroExemploTupla = (1, "Lucas", "Lima", 10.5M);
+arquivo.LerArquivo("Arquivos/arquivoLeitura.txt");
 
-var outroExemploTuplaCreate = Tuple.Create(1, "Lucas", "Lima", 10.5M);
+var (sucesso, linhasArquivo, quantidadeLinhas) = arquivo.LerArquivo("Arquivos/arquivoLeitura.txt");
 
-Console.WriteLine(tupla.Item1);
-Console.WriteLine(tupla.Item2);
-Console.WriteLine(tupla.Item3);
-Console.WriteLine(tupla.Item4);
+if (sucesso)
+{
+    Console.WriteLine("Quantidade linhas do arquivo: " + quantidadeLinhas);
+    foreach (var linha in linhasArquivo)
+    {
+        Console.WriteLine(linha);
+    }
+}
+else
+{
+    Console.WriteLine("Não foi possível ler o arquivo");
+}
