@@ -1,21 +1,8 @@
 ﻿using ExemploExplorar.Models;
 using System.Globalization;
 
-LeituraArquivo arquivo = new LeituraArquivo();
+Pessoa p1 = new("Lucas", "Lima");
 
-arquivo.LerArquivo("Arquivos/arquivoLeitura.txt");
+(string nome, string sobrenome) = p1;
 
-var (sucesso, linhasArquivo, _) = arquivo.LerArquivo("Arquivos/arquivoLeitura.txt");
-
-if (sucesso)
-{
-    // Console.WriteLine("Quantidade linhas do arquivo: " + quantidadeLinhas);
-    foreach (var linha in linhasArquivo)
-    {
-        Console.WriteLine(linha);
-    }
-}
-else
-{
-    Console.WriteLine("Não foi possível ler o arquivo");
-}
+Console.WriteLine($"{nome} {sobrenome}");
