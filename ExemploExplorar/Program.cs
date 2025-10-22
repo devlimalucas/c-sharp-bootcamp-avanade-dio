@@ -3,7 +3,7 @@ using System.Globalization;
 
 try
 {
-    string[] linhas = File.ReadAllLines("Arquivos/arquivoLeiturra.txt");
+    string[] linhas = File.ReadAllLines("Arquivos/arquivoLeitura.txt");
 
     foreach (string linha in linhas)
     {
@@ -21,4 +21,8 @@ catch (DirectoryNotFoundException ex)
 catch (Exception ex)
 {
     Console.WriteLine($"Ops, ocorreu um erro: {ex.Message}");
+}
+finally
+{
+    Console.WriteLine("Chegou até aqui");
 }
