@@ -1,21 +1,47 @@
 ﻿using ExemploExplorar.Models;
-using System.Data;
+using System.ComponentModel;
 using System.Globalization;
+using System.Runtime.CompilerServices;
 
-string dataString = "2022-02-170 18:00";
 
-bool sucesso = DateTime.TryParseExact(dataString,
-                      "yyyy-MM-dd HH:mm",
-                      CultureInfo.InvariantCulture,
-                      DateTimeStyles.None,
-                      out DateTime data);
+Dictionary<string, string> estados = [];
 
-if (sucesso)
+try
 {
-    Console.WriteLine($"Conversão com sucesso! Data: {data}");
+    estados.Add("SP", "São Paulo");
+    estados.Add("BA", "Bahia");
+    estados.Add("MG", "Minas Gerais");
+
+    foreach (var item in estados)
+    {
+        Console.WriteLine($"Chave: {item.Key}, Valor: {item.Value}");
+    }
+
+    Console.WriteLine("-----------");
+
+    estados.Remove("MG");
+    estados["SP"] = "São Paulo - valor alterado";
+
+    foreach (var item in estados)
+    {
+        Console.WriteLine($"Chave: {item.Key}, Valor: {item.Value}");
+    }
+
+    Console.WriteLine("-----------");
+
+    string chave = "BA";
+
+    if (estados.ContainsKey(chave))
+    {
+        Console.WriteLine($"O valor existente: {chave}");
+    }
+    else
+    {
+        Console.WriteLine($"Valor não existente. É seguro adicionar a chave: {chave}");
+    }
 
 }
-else
+catch (Exception ex)
 {
-    Console.WriteLine($"{dataString} não é uma data válida");
+    Console.WriteLine($"Ops, ocorreu um erro: {ex.Message}");
 }
