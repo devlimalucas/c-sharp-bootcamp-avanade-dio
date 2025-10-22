@@ -1,25 +1,23 @@
 ﻿using ExemploExplorar.Models;
+using System.ComponentModel;
 using System.Globalization;
 using System.Runtime.CompilerServices;
 
 
-Stack<int> pilha = new();
+Dictionary<string, string> estados = [];
 
-pilha.Push(4);
-pilha.Push(5);
-pilha.Push(6);
-pilha.Push(10);
-
-foreach (int item in pilha)
+try
 {
-    Console.WriteLine(item);
+    estados.Add("SP", "São Paulo");
+    estados.Add("BA", "Bahia");
+    estados.Add("MG", "Minas Gerais");
+
+    foreach (var item in estados)
+    {
+        Console.WriteLine($"Chave: {item.Key}, Valor: {item.Value}");
+    }
 }
-
-Console.WriteLine($"Removendo o elemento do topo:  {pilha.Pop()}");
-
-pilha.Push(20);
-
-foreach (int item in pilha)
+catch (Exception ex)
 {
-    Console.WriteLine(item);
+    Console.WriteLine($"Ops, ocorreu um erro: {ex.Message}");
 }
