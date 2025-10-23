@@ -1,7 +1,9 @@
 ﻿using ExemploExplorar.Models;
 using System.Globalization;
+using Newtonsoft.Json;
 
-int numero = 15;
-bool ehPar = numero % 2 == 0;
+Venda v1 = new(id: 1, produto: "Material de escritório", preco: 20.30M);
 
-Console.WriteLine($"O número é " + (ehPar ? "par" : "ímpar"));
+string serializado = JsonConvert.SerializeObject(v1, Formatting.Indented);
+
+Console.WriteLine(serializado);
