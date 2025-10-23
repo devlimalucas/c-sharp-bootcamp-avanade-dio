@@ -1,9 +1,9 @@
 ﻿using System.Runtime.Serialization;
 using ExemploPOO.Models;
 
-Pessoa p1 = new();
+ContaCorrente c1 = new(123, 1000);
 
-p1.Nome = "Lucas Lima";
-p1.Idade = 30;
-
-p1.Apresentar();
+c1.ExibirSaldo();
+c1.Sacar(500);
+c1.ExibirSaldo();
+c1.Sacar(10000);
