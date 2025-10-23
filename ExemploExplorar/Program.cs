@@ -2,18 +2,12 @@
 using System.Globalization;
 using Newtonsoft.Json;
 
-DateTime dataAtual = DateTime.Now;
+string conteudoArquivo = File.ReadAllText("Arquivos/vendas.json");
 
-List<Venda> listaVendas = [];
+List<Venda> listaVenda = JsonConvert.DeserializeObject<List<Venda>>(conteudoArquivo);
 
-Venda v1 = new(id: 1, produto: "Material de escritório", preco: 20.30M, dataAtual);
-Venda v2 = new(id: 2, produto: "Licença de Software", preco: 200.56M, dataAtual);
-
-listaVendas.Add(v1);
-listaVendas.Add(v2);
-
-string serializado = JsonConvert.SerializeObject(listaVendas, Formatting.Indented);
-
-File.WriteAllText("Arquivos/vendas.json", serializado);
-
-Console.WriteLine(serializado);
+foreach (Venda venda in listaVenda)
+{
+    Console.WriteLine($"Id: {venda.Id}, Produto: {venda.Produto}, " +
+    $"Preço: {venda.Preco}, Data: {venda.DataVenda:dd-MM-yyy HH:mm}");
+}
