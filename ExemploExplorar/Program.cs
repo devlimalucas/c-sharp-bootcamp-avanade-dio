@@ -1,7 +1,13 @@
 ﻿using ExemploExplorar.Models;
 using System.Globalization;
+using Newtonsoft.Json;
 
-int numero = 15;
-bool ehPar = numero % 2 == 0;
+string conteudoArquivo = File.ReadAllText("Arquivos/vendas.json");
 
-Console.WriteLine($"O número é " + (ehPar ? "par" : "ímpar"));
+List<Venda> listaVenda = JsonConvert.DeserializeObject<List<Venda>>(conteudoArquivo);
+
+foreach (Venda venda in listaVenda)
+{
+    Console.WriteLine($"Id: {venda.Id}, Produto: {venda.Produto}, " +
+    $"Preço: {venda.Preco}, Data: {venda.DataVenda:dd-MM-yyy HH:mm}");
+}
