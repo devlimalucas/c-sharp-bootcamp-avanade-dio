@@ -1,9 +1,16 @@
-﻿using System.Runtime.Serialization;
+﻿using System.Runtime.Intrinsics.X86;
+using System.Runtime.Serialization;
 using ExemploPOO.Models;
 
-ContaCorrente c1 = new(123, 1000);
+Aluno a1 = new();
 
-c1.ExibirSaldo();
-c1.Sacar(500);
-c1.ExibirSaldo();
-c1.Sacar(10000);
+a1.Nome = "Lucas Lima";
+a1.Idade = 30;
+
+Aluno a2 = new();
+
+a2.Nome = "Kleber Filho";
+a2.Idade = 40;
+
+a1.Apresentar();
+a2.Apresentar();
