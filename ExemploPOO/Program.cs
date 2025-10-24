@@ -2,7 +2,12 @@
 using System.Runtime.Serialization;
 using ExemploPOO.Models;
 
-Corrente c = new();
+Pessoa p1 = new("Lucas Lima");
 
-c.Creditar(500);
-c.ExibirSaldo();
+Aluno a1 = new();
+
+Professor pro1 = new("Ricado Bicudo");
+
+p1.Apresentar();
+a1.Apresentar();
+pro1.Apresentar();
