@@ -15,7 +15,7 @@ namespace ExemploPOO.Models
 
         public int Multiplicar(int num1, int num2)
         {
-            return num1 * num2;
+             return num1 * num2;
         }
 
         public int Somar(int num1, int num2)
