@@ -5,9 +5,12 @@ using System.Threading.Tasks;
 
 namespace ExemploPOO.Models
 {
-    // Não é possível herdar professor
-    public class Diretor
+    public class Computador
     {
-
+        public override string ToString()
+        {
+            return "Método subscrito";
+        }
     }
 }
+
