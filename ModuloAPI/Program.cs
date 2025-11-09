@@ -1,11 +1,6 @@
 using Microsoft.OpenApi.Models;
-using ModuloAPI.Context;
-using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
-
-builder.Services.AddDbContext<AgendaContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("ConexaoPadrao")));
 
 // Adiciona controllers
 builder.Services.AddControllers();
